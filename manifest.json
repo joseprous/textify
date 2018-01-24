@@ -3,7 +3,7 @@
     "name": "textify",
     "version": "1.0",
 
-    "description": "Extract the text of a page",
+    "description": "Extract the text of articles from selected domains",
 
     "background": {
         "scripts": ["background.js"]
