@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "textify",
+    "version": "1.0",
+
+    "description": "Extract the text of a page",
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+
+    "permissions": [
+        "activeTab",
+        "tabs"
+    ],
+
+    "page_action": {
+        "default_icon": "icons/text_off32.png",
+        "browser_style": true
+    }
+    
+}
