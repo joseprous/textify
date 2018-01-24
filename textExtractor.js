@@ -39,26 +39,34 @@ if(h.length > 0){
 var articleTitle = document.createElement('h1');
 articleTitle.textContent = oldArticleTitle.textContent;
 
-var oldArticleBody;
+var oldArticleBody = null;
 
-var classBigThink = "row article-body";
-var b = document.getElementsByClassName(classBigThink);
-if(b.length > 0){
-    oldArticleBody = b[0];
+var bodyClasses = [
+    "row article-body", /*bigthink*/
+    "article__body" /*sciencemag and nature*/
+];
+
+for (var c in bodyClasses) {
+    var e = document.getElementsByClassName(bodyClasses[c]);
+    if(e.length > 0){
+        oldArticleBody = e[0];
+        break;
+    }
 }
 
-var classSciencemag/*and nature*/ = "article__body";
-var b = document.getElementsByClassName(classSciencemag);
-if(b.length > 0){
-    oldArticleBody = b[0];
-}
+if(oldArticleBody == null){
+    var ids = [
+        "posts" //brainpickings
+    ];
 
-var classBrainpickings = "posts";
-var b = document.getElementById(classBrainpickings);
-if(b != null){
-    oldArticleBody = b;
+    for (var c in ids) {
+        var e = document.getElementById(ids[c]);
+        if(e != null){
+            oldArticleBody = e;
+            break;
+        }
+    }
 }
-
 
 var articleBody = document.createElement("div");
 
